@@ -3,6 +3,7 @@ import { Button } from "./Button";
 import { NavLink } from "./NavLink";
 import { theme } from "../lib/theme";
 import { cx } from "../lib/theme";
+import Image from "next/image";
 
 interface HeaderProps {
   navSolid: boolean;
@@ -18,9 +19,14 @@ export const Header = ({ navSolid }: HeaderProps) => (
   >
     <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
       <div className="flex items-center gap-3">
-        <div className="grid h-8 w-8 place-items-center rounded-xl" style={{ background: theme.colors.text, color: theme.colors.secondary }}>
-          M
-        </div>
+        <div className="grid h-12 w-12 place-items-center rounded-xl overflow-hidden" style={{ background: theme.colors.text }}>
+            <Image
+              src="/favicon.png" // path relative to public/
+              alt="Moments logo"
+              width={72}
+              height={72}
+            />
+          </div>
         <span className="text-sm tracking-wide" style={{ color: theme.colors.text }}>Moments</span>
       </div>
       <nav className="hidden md:flex items-center gap-6 text-sm">
