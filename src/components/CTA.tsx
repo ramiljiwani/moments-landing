@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { theme } from "../lib/theme";
 
 const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzF4eLHBKbHtMy0RfZpPBIM6NtktzyvyNLyVimTEJlDTkEOLz5CR01xTPmZJU2SSSb5Qg/exec"; // from the deployment
-const OPTIONAL_SHARED_TOKEN = ""; // set to match the script if you enabled it
 
 export const CTA = () => {
   const [status, setStatus] = useState<"idle" | "loading" | "ok" | "dup" | "err">("idle");
