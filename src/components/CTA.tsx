@@ -49,12 +49,12 @@ export const CTA = () => {
                 });
             
                 // Try to parse JSON, but tolerate plain text
-                let data: any = null;
+                let data: unknown = null;
                 const txt = await res.text();
                 try { data = JSON.parse(txt); } catch { /* ignore */ }
             
-                if (res.ok && data?.ok) {
-                  setStatus(data.duplicate ? "dup" : "ok");
+                if (res.ok && (data as { ok?: boolean; duplicate?: boolean })?.ok) {
+                  setStatus((data as { duplicate?: boolean }).duplicate ? "dup" : "ok");
                   form.reset();
                 } else if (res.ok && txt.includes('"ok":true')) {
                   setStatus("ok");
