@@ -2,6 +2,7 @@ import React from "react";
 import { ShieldCheck, Lock } from "lucide-react";
 import { theme } from "../lib/theme";
 import { Button } from "./Button";
+import Link from "next/link";
 
 export const Privacy = () => (
   <section id="privacy" className="mt-28">
@@ -24,8 +25,12 @@ export const Privacy = () => (
           </div>
         </div>
         <div className="mt-6 flex flex-col md:flex-row md:items-center gap-4">
-          <Button variant="outline" href="">Privacy Policy</Button>
-          <Button variant="outline" href="">Terms of Use</Button>
+          <Link href="/privacy-policy" target="_blank">
+            <Button variant="outline">Privacy Policy</Button>
+          </Link>
+          <Link href="/terms-and-conditions" target="_blank">
+            <Button variant="outline">Terms and Conditions</Button>
+          </Link>
         </div>
       </div>
     </div>
